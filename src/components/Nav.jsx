@@ -5,7 +5,10 @@ function Nav(props) {
 
   return (
     <nav className="bg-custom-neutral-0 dark:bg-custom-neutral-800 flex items-center justify-between rounded-lg px-4 py-2 drop-shadow-lg">
-      <img src="/public/images/logo.svg" alt="Extensions logo" />
+      <img
+        src="/browser-extension-manager-ui/images/logo.svg"
+        alt="Extensions logo"
+      />
 
       <button
         className="bg-custom-neutral-100 dark:bg-custom-neutral-700 ring-custom-red-500 cursor-pointer rounded-xl p-3.5 outline-0 focus:ring-2"
@@ -17,8 +20,8 @@ function Nav(props) {
         <img
           src={
             props.darkMode
-              ? "/public/images/icon-sun.svg"
-              : "/public/images/icon-moon.svg"
+              ? "/browser-extension-manager-ui/images/icon-sun.svg"
+              : "/browser-extension-manager-ui/images/icon-moon.svg"
           }
           alt=""
           aria-hidden="true"
