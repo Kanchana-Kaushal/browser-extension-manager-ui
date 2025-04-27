@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import Nav from "./components/Nav";
+import Filter from "./components/Filter";
+import Cards from "./components/Cards";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
+  const [filter, setFilter] = useState("all");
 
   useEffect(() => {
     if (darkMode) {
@@ -14,8 +17,12 @@ function App() {
 
   return (
     <>
-      <main className="mx-auto my-6 min-h-screen w-9/10">
-        <Nav darkMode={darkMode} setDarkMode={setDarkMode} />
+      <main className="font-noto-sans min-h-screen bg-linear-[180deg,#ebf2fc_0%,#eef8f9_100%] py-6 dark:bg-linear-[180deg,#040918_0%,#091540_100%]">
+        <div className="mx-auto w-9/10">
+          <Nav darkMode={darkMode} setDarkMode={setDarkMode} />
+          <Filter setFilter={setFilter} />
+          <Cards filter={filter} />
+        </div>
       </main>
     </>
   );
