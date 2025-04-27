@@ -4,12 +4,15 @@ function Nav(props) {
   }
 
   return (
-    <nav className="bg-custom-neutral-0 flex items-center justify-between rounded-lg px-4 py-2 drop-shadow-lg">
+    <nav className="bg-custom-neutral-0 dark:bg-custom-neutral-800 flex items-center justify-between rounded-lg px-4 py-2 drop-shadow-lg">
       <img src="/public/images/logo.svg" alt="Extensions logo" />
 
-      <div
-        className="bg-custom-neutral-300 cursor-pointer rounded-xl p-3.5"
+      <button
+        className="bg-custom-neutral-100 dark:bg-custom-neutral-700 ring-custom-red-500 cursor-pointer rounded-xl p-3.5 outline-0 focus:ring-2"
         onClick={toggleDarkMode}
+        aria-label={
+          props.darkMode ? "Switch to light mode" : "Switch to dark mode"
+        }
       >
         <img
           src={
@@ -17,9 +20,10 @@ function Nav(props) {
               ? "/public/images/icon-sun.svg"
               : "/public/images/icon-moon.svg"
           }
-          alt="toggle dark mode"
+          alt=""
+          aria-hidden="true"
         />
-      </div>
+      </button>
     </nav>
   );
 }
